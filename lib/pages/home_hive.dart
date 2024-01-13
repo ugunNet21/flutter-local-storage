@@ -11,7 +11,7 @@ class HomeHive extends StatefulWidget {
 }
 
 class _HomeHiveState extends State<HomeHive> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   late Box<MyData> _myBox;
 
   @override
@@ -29,7 +29,7 @@ class _HomeHiveState extends State<HomeHive> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hive Database Example'),
+        title: const Text('Hive Database Example'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -38,16 +38,16 @@ class _HomeHiveState extends State<HomeHive> {
           children: [
             TextField(
               controller: _controller,
-              decoration: InputDecoration(labelText: 'Enter a value'),
+              decoration: const InputDecoration(labelText: 'Enter a value'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 _saveValue();
               },
-              child: Text('Save'),
+              child: const Text('Save'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ValueListenableBuilder(
               valueListenable: _myBox.listenable(),
               builder: (context, Box<MyData> box, widget) {
